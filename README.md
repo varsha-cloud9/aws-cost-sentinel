@@ -6,7 +6,7 @@
 ![Status](https://img.shields.io/badge/Status-Active-1e8e3e?style=flat)
 ![Last Updated](https://img.shields.io/badge/Last%20Updated-May%202025-blue?style=flat)
 
-> **Built by Varsha** | MCA Graduate | Nashik, Maharashtra  
+> **Built by Varsha** | MCA Graduate | Nanded, Maharashtra  
 > AWS Certified Cloud Practitioner — CLF-C02 | Score: **967 / 1000**
 
 ---
@@ -161,7 +161,7 @@ REGION             = "ap-south-1" # Your AWS region
 
 ## 👤 About Me
 
-**Varsha** — MCA Graduate | Nashik, Maharashtra, India
+**Varsha** — MCA Graduate | Nanded, Maharashtra, India
 
 - 🏅 AWS Certified Cloud Practitioner (CLF-C02) — Score: **967/1000**
 - 💻 Skills: Python, boto3, Linux, AWS (EC2, S3, IAM, VPC, Lambda, CloudFront)
