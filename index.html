@@ -1,41 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AWS Cost Optimizer | varsha-cloud9</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f0f2f5; color: #232f3e; }
+    header { background: #232f3e; color: white; padding: 24px 40px; }
+    header h1 { font-size: 24px; }
+    header p  { font-size: 13px; color: #aab7c4; margin-top: 4px; }
+    .badges { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .badge { background: #ec922c; color: white; padding: 3px 12px;
+              border-radius: 20px; font-size: 12px; font-weight: bold; }
+    .badge.green  { background: #1e8e3e; }
+    .badge.blue   { background: #1a73e8; }
+    main { padding: 30px 40px; }
+    .summary { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 30px; }
+    .stat { background: white; border-radius: 10px; padding: 20px 28px;
+             flex: 1; min-width: 160px; box-shadow: 0 2px 8px rgba(0,0,0,.08);
+             border-top: 4px solid #ec922c; }
+    .stat.green { border-top-color: #1e8e3e; }
+    .stat.blue  { border-top-color: #1a73e8; }
+    .stat .num  { font-size: 32px; font-weight: bold; color: #ec922c; }
+    .stat.green .num { color: #1e8e3e; }
+    .stat.blue  .num { color: #1a73e8; }
+    .stat .lbl  { font-size: 13px; color: #666; margin-top: 4px; }
+    .card { background: white; border-radius: 10px; margin-bottom: 24px;
+             box-shadow: 0 2px 8px rgba(0,0,0,.08); overflow: hidden; }
+    .card-header { background: #232f3e; color: white; padding: 14px 20px;
+                    font-size: 15px; font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; }
+    th { background: #f8f9fa; padding: 10px 16px; text-align: left;
+          font-size: 12px; color: #666; border-bottom: 1px solid #e0e0e0; }
+    td { padding: 10px 16px; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
+    tr:last-child td { border-bottom: none; }
+    td.clean { color: #1e8e3e; font-weight: bold; }
+    .warn { color: #ec922c; font-weight: bold; }
+    footer { text-align: center; padding: 20px; font-size: 12px; color: #999; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>☁️ AWS Cost Optimizer Dashboard</h1>
+  <p>Region: ap-south-1 &nbsp;|&nbsp; Scan Time: 2026-05-25 17:30:33 IST</p>
+  <div class="badges">
+    <span class="badge">varsha-cloud9</span>
+    <span class="badge green">AWS CLF-C02 ✓ 967/1000</span>
+    <span class="badge blue">MCA Graduate</span>
+  </div>
+</header>
+<main>
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>AWS Cost Optimizer Dashboard</title>
-        <style>
-            body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f6f9; }
-            .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-            h1 { color: #232f3e; }
-            h3 { color: #ec922c; }
-            ul { list-style-type: none; padding: 0; }
-            li { background: #fdf3e6; margin: 5px 0; padding: 10px; border-left: 5px solid #ec922c; }
-            .clean { background: #e6f4ea; border-left: 5px solid #34a853; }
-        </style>
-    </head>
-    <body>
-        <h1>AWS Cost Optimization Report</h1>
-        <p>Potential Monthly Savings Target: <strong>35%+</strong> by cleaning orphaned resources.</p>
-        
-        <div class="card">
-            <h3>Stopped EC2 Instances (0)</h3>
-            <ul><li class='clean'>No idle stopped instances found!</li></ul>
-        </div>
-        
-        <div class="card">
-            <h3>Unattached EBS Volumes (0)</h3>
-            <ul><li class='clean'>No orphaned volumes found!</li></ul>
-        </div>
-        
-        <div class="card">
-            <h3>AWS Snapshots (0)</h3>
-            <ul><li class='clean'>No independent snapshots found!</li></ul>
-        </div>
-        
-        <div class="card">
-            <h3>Empty S3 Buckets (0)</h3>
-            <ul><li class='clean'>No empty buckets found!</li></ul>
-        </div>
-    </body>
-    </html>
-    
+  <div class="summary">
+    <div class="stat">
+      <div class="num">0</div>
+      <div class="lbl">Stopped EC2 Instances</div>
+    </div>
+    <div class="stat">
+      <div class="num">0</div>
+      <div class="lbl">Unattached EBS Volumes</div>
+    </div>
+    <div class="stat">
+      <div class="num">0</div>
+      <div class="lbl">Old Snapshots (30+ days)</div>
+    </div>
+    <div class="stat">
+      <div class="num">0</div>
+      <div class="lbl">Empty S3 Buckets</div>
+    </div>
+    <div class="stat green">
+      <div class="num">$0.0</div>
+      <div class="lbl">Est. Monthly Savings (USD)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">🖥️ Stopped EC2 Instances (0)</div>
+    <table>
+      <tr><th>Instance ID</th><th>Name</th><th>Type</th><th>Launched</th><th>Days Idle</th></tr>
+      <tr><td colspan="5" class="clean">✅ No stopped instances found — all instances are running!</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header">💾 Unattached EBS Volumes (0)</div>
+    <table>
+      <tr><th>Volume ID</th><th>Size (GB)</th><th>Type</th><th>Age (Days)</th><th>Monthly Cost (USD)</th></tr>
+      <tr><td colspan="5" class="clean">✅ No unattached volumes found — storage is clean!</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header">📸 Old Snapshots — 30+ Days (0)</div>
+    <table>
+      <tr><th>Snapshot ID</th><th>Size (GB)</th><th>Age (Days)</th><th>Description</th></tr>
+      <tr><td colspan="4" class="clean">✅ No old snapshots found — backups are well managed!</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header">🪣 Empty S3 Buckets (0)</div>
+    <table>
+      <tr><th>Bucket Name</th></tr>
+      <tr><td colspan="1" class="clean">✅ No empty buckets found — storage is optimized!</td></tr>
+    </table>
+  </div>
+
+</main>
+<footer>
+  Built by <strong>Varsha</strong> | AWS CLF-C02 (967/1000) | MCA Graduate | Nashik, Maharashtra
+  &nbsp;·&nbsp; <a href="https://github.com/varsha-cloud9/aws-cost-optimizer-nw">GitHub Repo</a>
+</footer>
+</body>
+</html>
