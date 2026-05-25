@@ -1,0 +1,41 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>AWS Cost Optimizer Dashboard</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f6f9; }
+            .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+            h1 { color: #232f3e; }
+            h3 { color: #ec922c; }
+            ul { list-style-type: none; padding: 0; }
+            li { background: #fdf3e6; margin: 5px 0; padding: 10px; border-left: 5px solid #ec922c; }
+            .clean { background: #e6f4ea; border-left: 5px solid #34a853; }
+        </style>
+    </head>
+    <body>
+        <h1>AWS Cost Optimization Report</h1>
+        <p>Potential Monthly Savings Target: <strong>35%+</strong> by cleaning orphaned resources.</p>
+        
+        <div class="card">
+            <h3>Stopped EC2 Instances (0)</h3>
+            <ul><li class='clean'>No idle stopped instances found!</li></ul>
+        </div>
+        
+        <div class="card">
+            <h3>Unattached EBS Volumes (0)</h3>
+            <ul><li class='clean'>No orphaned volumes found!</li></ul>
+        </div>
+        
+        <div class="card">
+            <h3>AWS Snapshots (0)</h3>
+            <ul><li class='clean'>No independent snapshots found!</li></ul>
+        </div>
+        
+        <div class="card">
+            <h3>Empty S3 Buckets (0)</h3>
+            <ul><li class='clean'>No empty buckets found!</li></ul>
+        </div>
+    </body>
+    </html>
+    
